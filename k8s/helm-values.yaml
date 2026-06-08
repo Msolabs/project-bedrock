@@ -1,0 +1,8 @@
+mysql:
+  enabled: false
+
+postgres:
+  enabled: false
+
+dynamodb:
+  enabled: false
