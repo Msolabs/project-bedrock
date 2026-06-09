@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "assets" {
-  bucket        = "bedrock-assets-moshood-owolabi" 
+  bucket        = "bedrock-assets-moshood-owolabi"
   force_destroy = true
 }
 
@@ -22,7 +22,7 @@ resource "aws_iam_role_policy_attachment" "lambda_logs" {
 }
 
 resource "aws_lambda_function" "processor" {
-  filename      = "../lambda/lambda_function.zip" 
+  filename      = "../lambda/lambda_function.zip"
   function_name = "bedrock-asset-processor"
   role          = aws_iam_role.lambda_role.arn
   handler       = "index.lambda_handler"
@@ -44,6 +44,6 @@ resource "aws_s3_bucket_notification" "notify" {
     lambda_function_arn = aws_lambda_function.processor.arn
     events              = ["s3:ObjectCreated:*"]
   }
-  
+
   depends_on = [aws_lambda_permission.allow_s3]
 }

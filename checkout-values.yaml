@@ -1,0 +1,6 @@
+app:
+  persistence:
+    provider: redis
+
+redis:
+  create: true

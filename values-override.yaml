@@ -1,0 +1,7 @@
+# values-override.yaml
+catalog:
+  database:
+    host: "YOUR_RDS_ENDPOINT_HERE" # Get this from AWS Console RDS -> Databases
+    user: "admin"
+    password: "YOUR_PASSWORD"
+# Add other services as required by the sample app

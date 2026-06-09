@@ -1,0 +1,12 @@
+app:
+  persistence:
+    provider: mysql
+    endpoint: bedrock-mysql.cs5okgo207jo.us-east-1.rds.amazonaws.com
+    database: retail_catalog
+
+    secret:
+      create: false
+      name: catalog-db
+
+mysql:
+  create: false

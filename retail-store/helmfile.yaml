@@ -1,7 +1,7 @@
 releases:
   - name: "catalog"
-    namespace: "retail-app"
-    chart: ./catalog-chart
+    namespace: "default"
+    chart: ../catalog/chart
     wait: true
     values:
       - templates/components.yaml.gotmpl
@@ -13,8 +13,8 @@ releases:
           create: true
 
   - name: "carts"
-    namespace: "retail-app"
-    chart: ./cart/chart
+    namespace: "default"
+    chart: ../cart/chart
     wait: true
     values:
       - templates/components.yaml.gotmpl
@@ -26,8 +26,8 @@ releases:
           create: true
 
   - name: "orders"
-    namespace: "retail-app"
-    chart: ./orders/chart
+    namespace: "default"
+    chart: ../orders/chart
     wait: true
     values:
       - templates/components.yaml.gotmpl
@@ -43,8 +43,8 @@ releases:
           create: true
 
   - name: "checkout"
-    namespace: "retail-app"
-    chart: ./checkout/chart
+    namespace: "default"
+    chart: ../checkout/chart
     wait: true
     values:
       - templates/components.yaml.gotmpl
@@ -58,8 +58,8 @@ releases:
           create: true
 
   - name: "ui"
-    namespace: "retail-app"
-    chart: ./ui/chart
+    namespace: "default"
+    chart: ../ui/chart
     wait: true
     timeout: 600
     values:

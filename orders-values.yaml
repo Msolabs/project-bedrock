@@ -1,0 +1,18 @@
+app:
+  persistence:
+    provider: postgres
+    endpoint: bedrock-postgres.cs5okgo207jo.us-east-1.rds.amazonaws.com
+    database: retail_orders
+
+    secret:
+      create: false
+      name: orders-db
+
+  messaging:
+    provider: rabbitmq
+
+postgresql:
+  create: false
+
+rabbitmq:
+  create: true
