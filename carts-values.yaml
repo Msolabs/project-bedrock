@@ -3,7 +3,7 @@ app:
     provider: dynamodb
 
     dynamodb:
-      tableName: retail-carts
+      tableName: retail-carts-v2
       createTable: false
 
 dynamodb:

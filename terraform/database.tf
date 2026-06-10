@@ -40,7 +40,7 @@ resource "aws_db_instance" "mysql" {
   identifier             = "bedrock-mysql"
   engine                 = "mysql"
   engine_version         = "8.0"
-  instance_class         = "db.t3.micro"
+  instance_class         = "db.t4g.micro"
   allocated_storage      = 20
   db_name                = "retail_catalog"
   username               = "dbadmin"
@@ -71,9 +71,8 @@ resource "aws_db_instance" "postgres" {
   }
 }
 
-
 resource "aws_dynamodb_table" "carts" {
-  name         = "retail-carts"
+  name         = "retail-carts-v2"
   billing_mode = "PAY_PER_REQUEST"
 
   hash_key = "id"
@@ -81,6 +80,17 @@ resource "aws_dynamodb_table" "carts" {
   attribute {
     name = "id"
     type = "S"
+  }
+
+  attribute {
+    name = "customerId"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "idx_global_customerId"
+    hash_key        = "customerId"
+    projection_type = "ALL"
   }
 
   tags = {
